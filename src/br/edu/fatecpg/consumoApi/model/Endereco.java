@@ -1,7 +1,10 @@
 package br.edu.fatecpg.consumoApi.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Endereco {
     private String cep;
+    @SerializedName("logradouro")
     private String rua;
     private String bairro;
     private String localidade;
