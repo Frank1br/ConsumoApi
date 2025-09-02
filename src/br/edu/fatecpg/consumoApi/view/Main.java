@@ -1,5 +1,6 @@
 package br.edu.fatecpg.consumoApi.view;
 
+import br.edu.fatecpg.consumoApi.controller.BancoController;
 import br.edu.fatecpg.consumoApi.model.Endereco;
 import br.edu.fatecpg.consumoApi.service.BuscaEndereco;
 import com.google.gson.Gson;
@@ -39,8 +40,9 @@ public class Main {
                 String resposta = scanner.nextLine();
 
                 if (resposta.equalsIgnoreCase("sim")) {
-
-                    System.out.println("Salvando endereço... (Função não implementada)");
+                    System.out.println("Salvando endereço no banco...");
+                    BancoController.insertEndereco(endereco.getCep(), endereco.getRua(), endereco.getBairro(), endereco.getLocalidade(), endereco.getEstado());
+                    System.out.println("Endereço salvo com sucesso!");
                 } else {
                     System.out.println("Endereço não salvo.");
                 }
